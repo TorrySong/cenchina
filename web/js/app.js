@@ -27,11 +27,21 @@ myApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
         })
 
         .state("ranking", {//奖品
-            url: "/prize",
+            url: "/ranking",
             views: {
                 'main': {
                     templateUrl: 'html/ranking.html',
                     controller: 'rankingController'
+                }
+            }
+        })
+
+        .state("xiangqing", {//个人详情
+            url: "/xiangqing",
+            views: {
+                'main': {
+                    templateUrl: 'html/xiangqing.html',
+                    controller: 'xiangqingController'
                 }
             }
         })

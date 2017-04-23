@@ -1,18 +1,24 @@
 <div class="shop_head" style="background: url('{{data.store.infoPic.img}}') no-repeat; background-size: cover">
-    <div class="shop_head_c clear">
-        <div class="shop_head_img"><img ng-src="{{data.store.head.img}}" alt=""></div>
-        <p class="shop_head_name" ng-bind="data.store.name">老白打火机旗舰店</p>
-        <p class="shop_head_r" ng-show="data.store.isrz==1">认证商家</p>
-    </div>
+    <img src="" alt=""/>
 </div>
 <div class="shop_recommend">
-    <p class="shop_recommend_t">毒物推荐</p>
+    <p class="shop_recommend_t" style="color: #ed4e16;">活动时间:2017年5月1日--2017年5月15日</p>
+    <p class="shop_recommend_t">今天是: <i style="color: midnightblue">2017年5月1日</i></p>
     <div class="shop_recommend_list clear">
-        <div class="shop_recommend_p" ng-repeat="i in data.datas" ui-sref="shangpin({pid:i.id})">
-            <p class="shop_recommend_p_img"><img ng-src="{{i.pic.img}}" alt=""></p>
-            <p class="shop_recommend_p_title" ng-bind="i.title">老白打火机旗舰店老白打火机旗舰店</p>
-            <span class="shop_recommend_p_price"><i ng-bind="i.price">123</i></span>
-            <span class="shop_recommend_p_cun">库存: <i ng-bind="i.reserve">23</i></span>
+        <div class="shop_recommend_p" ng-repeat="i in info">
+            <p class="shop_recommend_p_img" ui-sref="xiangqing"><img src="./images/001.jpg" alt=""/></p>
+            <p style="height: 1rem;line-height: 1rem;">
+                <span class="shop_recommend_p_price">姓名:<i ng-bind="i.name">123</i></span>
+                <span class="shop_recommend_p_price">编号: <i ng-bind="i.num">23</i></span>
+            </p>
+            <p style="height: 1rem;width: 4.44rem;" class="clear">
+                <i class="toupiao">投票</i>&nbsp;
+                <i class="toupiao" style="float: right">送礼物</i>
+            </p>
+            <p style="height: 0.5rem">
+                <span class="shop_recommend_p_price"><i ng-bind="i.p">123</i>票</span>
+                <span class="shop_recommend_p_price" style="float: right;"><i ng-bind="i.z">123</i>钻</span>
+            </p>
         </div>
     </div>
 </div>
@@ -21,4 +27,19 @@
 </div>
 <div style=" height: 2.45rem;"></div>
 
-
+<div class="footer">
+    <ul class='clear'>
+        <li>
+            <a style="background: url(../images/homepage-active.png) no-repeat;"></a>
+            <span style="color: #ffd600;">首页</span>
+        </li>
+        <li ui-sref="prize">
+            <a href=""></a>
+            <span>奖品</span>
+        </li>
+        <li ui-sref="ranking">
+            <a href=""></a>
+            <span>排行榜</span>
+        </li>
+    </ul>
+</div>

@@ -1,5 +1,6 @@
 package controller;
 
+import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,19 +20,26 @@ public class controller1 {
 
     @RequestMapping("/first")
     @ResponseBody
-    public JSONObject firstMethod(HttpServletRequest request,HttpServletResponse response){
+    public JSONArray firstMethod(HttpServletRequest request,HttpServletResponse response){
         /*PrintWriter out = null;
         try {
             out = response.getWriter();
         } catch (IOException e) {
             e.printStackTrace();
         }*/
-        JSONObject obj = new JSONObject();
-        obj.put("a","aVal");
+        JSONArray arr = new JSONArray();
+        for(int i=0;i<10;i++){
+            JSONObject obj = new JSONObject();
+            obj.put("num",i);
+            obj.put("name","name"+i);
+            obj.put("p",i*2+1);
+            obj.put("z",100-i);
+            arr.add(obj);
+        }
       /*  out.print(obj);
         out.flush();
         out.close();*/
-        return obj;
+        return arr;
     }
 
 }
