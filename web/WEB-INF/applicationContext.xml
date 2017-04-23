@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+	   xmlns:task="http://www.springframework.org/schema/task"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+	   http://www.springframework.org/schema/task
+       http://www.springframework.org/schema/task/spring-task-3.1.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop-3.1.xsd">
+
+    <bean id="dataSource"
+          class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
+        <property name="url" value="jdbc:mysql://10.137.210.35:3307/qccloud" />
+        <property name="username" value="root" />
+        <property name="password" value="Qazwsx123" />
+    </bean>
+
+    <!-- 启动包扫描功能，以便注册带有@Controller、@Service、@repository、@Component等注解的类成为spring的bean -->
+    <context:component-scan base-package="service" />
+
+    <context:component-scan base-package="dao" />
+
+    <!--<aop:config>
+        <aop:aspect id="aspect" ref="aspectBean">
+            <aop:pointcut id="firstPoint" expression="execution(* service.*.*(..))" />
+            <aop:after pointcut-ref="firstPoint" method="doAfter"/>
+            <aop:before pointcut-ref="firstPoint" method="doBefore"/>
+            <aop:after-returning pointcut-ref="firstPoint" method="afterReturning" returning="obj" />
+        </aop:aspect>
+    </aop:config>
+
+    <aop:config>
+        <aop:aspect id="aspect1" ref="aspectBean">
+            <aop:pointcut id="thirdPoint" expression="execution(* service.impl.BaseServiceImpl.getResult(..))" />
+            <aop:after-returning pointcut-ref="thirdPoint" method="afterReturning" returning="obj" />
+        </aop:aspect>
+    </aop:config>
+
+    <aop:config >
+        <aop:aspect id="recordOpe" ref="aspectBean">
+            <aop:pointcut id="secondPoint" expression="execution(* controller.*.*(..))" />
+            <aop:before pointcut-ref="secondPoint" method="recordOperation" />
+        </aop:aspect>
+    </aop:config>
+
+    <bean id="aspectBean" class="tools.Aspect"/>
+    &lt;!&ndash;dao层异常拦截&ndash;&gt;
+    <bean id="log" class="tools.ExceptionLog"></bean>
+    <bean id="logAdvice" class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+        <property name="beanNames">
+            <list>
+                <value>disDataDao</value>
+                <value>getDataDao</value>
+            </list>
+        </property>
+        <property name="interceptorNames">
+            <list>
+                <value>log</value>
+            </list>
+        </property>
+    </bean>
+	&lt;!&ndash;定时任务&ndash;&gt;
+    <task:annotation-driven/>
+    <context:annotation-config/>
+    <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
+    <context:component-scan base-package="tools"/>-->
+</beans>

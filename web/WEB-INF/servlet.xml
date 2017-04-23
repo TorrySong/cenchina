@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+
+       <!-- 启动包扫描功能，以便注册带有@Controller、@Service、@repository、@Component等注解的类成为spring的bean -->
+       <context:component-scan base-package="controller" />
+
+       <aop:aspectj-autoproxy proxy-target-class="true"/>
+
+       <!--<context:annotation-config></context:annotation-config>-->
+
+       <mvc:annotation-driven />
+
+       <mvc:resources mapping="*.html" location="/"/>
+       <mvc:resources mapping="html/*.html" location="/html/"/>
+       <mvc:resources mapping="css/*.css" location="/css/"/>
+       <mvc:resources mapping="js/*.js" location="/js/"/>
+       <mvc:resources mapping="libs/*.js" location="/libs/"/>
+       <mvc:resources mapping="images/*.*" location="/images/"/>
+</beans>
