@@ -1716,11 +1716,77 @@ option{
 #preview{
  width: 2rem;
  height: 2rem;
- background: url("../image/pic_add.gif") no-repeat center center;
+ /*background: url("../image/pic_add.gif") no-repeat center center;*/
 }
 /*投片项目*/
 .toupiao{
  font-size: 0.3rem;background: red;color: white;padding: 0.2rem 0.4rem;
  display: block;
  float: left;
+}
+
+.juzhong{
+ margin: 0 auto;
+}
+.prize_title{
+ width: 100%;
+ font-size: 0.5rem;
+ text-align: center;
+ height: 1.5rem;
+ line-height: 1.5rem;
+ font-weight: bold;
+}
+.prize_warm{
+ font-size: 0.45rem;
+ text-align: center;
+ height: 100%;
+ width: 100%;
+ color:indianred;
+ background: lightyellow;
+ margin-top: 0.3rem;
+}
+.prize_talk_1,.prize_talk_2{
+ font-size: 0.4rem;
+ text-align: center;
+ height: 100%;
+ width: 100%;
+ color:#ed4e16;
+ background: yellow;
+ margin-top: 0.3rem;
+}
+.prize_talk_3{
+ font-size: 0.4rem;
+ text-align: center;
+ height: 100%;
+ width: 100%;
+ color:#ed4e16;
+ margin-top: 0.3rem;
+}
+.prize_one{
+ font-size: 0.5rem;
+ height: 100%;
+ width: 100%;
+ margin-top: 0.5rem;
+ background: beige;
+}
+.prize_img{
+ width: 100%;
+ height: 100%;
+}
+.jianjie{
+ font-size: 0.4rem;
+ height: 100%;
+ width: 100%;
+ margin-top: 0.3rem;
+}
+.genduo{
+ font-size: 0.4rem;
+ margin: 0.2rem auto;
+ background: #ed4e16;
+ color: white;
+ width: 3rem;
+ border-radius: 1rem;
+ height: 0.8rem;
+ line-height: 0.8rem;
+ text-align: center;
 }

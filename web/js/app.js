@@ -45,4 +45,13 @@ myApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
                 }
             }
         })
+        .state("content", {//活动内容及简介
+            url: "/content",
+            views: {
+                'main': {
+                    templateUrl: 'html/content.html',
+                    controller: 'contentController'
+                }
+            }
+        })
 });

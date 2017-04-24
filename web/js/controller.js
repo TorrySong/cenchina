@@ -47,3 +47,6 @@ myApp.controller('rankingController', function($scope, $http, $state,$cookieStor
 myApp.controller('xiangqingController', function($scope, $http, $state,$cookieStore,$stateParams) {
 
 })
+myApp.controller('contentController', function($scope, $http, $state,$cookieStore,$stateParams) {
+
+})
